@@ -8,9 +8,41 @@
 
 .calc-result {
     border: 1px solid #000;
-    width: 100%;
+    width: calc(100% - 30px);
     height: 70px;
     margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 5px 15px;
+    font-size: 2rem;
+}
+.calc-computation {
+    border: 1px solid #000;
+    margin: 0 0 20px;
+    height: 50px;
+    width: calc(100% - 30px);
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 5px 15px;
+}
+.calc-top {
+    display: flex;
+}
+.calc-fields {
+    width: 100%;
+}
+.calc-action-now {
+    height: 162px;
+    border: 1px solid #000;
+    width: 150px;
+    margin: 0 0 20px 20px;
+    font-size: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .calc-actions {
