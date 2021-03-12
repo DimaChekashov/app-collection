@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christmas Light</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="balls play-animation">
+        <div class="ball red"></div>
+        <div class="ball yellow"></div>
+        <div class="ball blue"></div>
+        <div class="ball green"></div>
+        <div class="ball red"></div>
+        <div class="ball yellow"></div>
+        <div class="ball blue"></div>
+        <div class="ball green"></div>
+    </div>
+    <h1 class="title-light play-animation">
+        <span class="word word-red">C</span>
+        <span class="word word-yellow">h</span>
+        <span class="word word-blue">r</span>
+        <span class="word word-green">i</span>
+        <span class="word word-red">s</span>
+        <span class="word word-yellow">t</span>
+        <span class="word word-blue">m</span>
+        <span class="word word-green">a</span>
+        <span class="word word-red">s</span>
+        <span class="word word-yellow">L</span>
+        <span class="word word-blue">i</span>
+        <span class="word word-green">g</span>
+        <span class="word word-red">h</span>
+        <span class="word word-yellow">t</span>
+    </h1>
+    <div class="action-panel">
+        <button class="action-btn play active">Включить анимацию</button>
+        <button class="action-btn stop">Выключить анимацию</button>
+        <div class="speed">
+            <label for="">Скорость анимации:</label>
+            <input type="number" min="1" max="5" placeholder="Скорость анимации от 1 до 5" class="speed-input">
+            <button class="action-btn speed-btn">Изменить скорость</button>
+        </div>
+    </div>
+    
+    <script src="index.js"></script>
+</body>
+</html>
