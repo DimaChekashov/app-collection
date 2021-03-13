@@ -57,6 +57,48 @@ const people = [
 
 const userList = document.querySelector(".user-list");
 
-people.forEach((item) => {
-    userList.innerHTML += `<li class="user-list-item">${item.name}</li>`;
+people.forEach((item, i) => {
+    userList.innerHTML += `<li class="user-list-item" user-id="${i + 1}">${
+        item.name
+    }</li>`;
 });
+
+const listItems = document.querySelectorAll(".user-list-item");
+
+listItems.forEach((item) => {
+    item.addEventListener("click", (e) => {
+        if (document.querySelector(".active-item")) {
+            document
+                .querySelector(".active-item")
+                .classList.remove("active-item");
+        }
+        e.target.classList.add("active-item");
+        renderInfo(+item.getAttribute("user-id"), people);
+    });
+});
+
+function renderInfo(id, userDB) {
+    document.querySelector(".user-info").innerHTML = `
+        <li class="user-info-item">Имя: <span class="user-info-item-output">${
+            userDB[id - 1].name
+        }</span></li>
+        <li class="user-info-item">Улица: <span class="user-info-item-output">${
+            userDB[id - 1].street
+        }</span></li>
+        <li class="user-info-item">Город: <span class="user-info-item-output">${
+            userDB[id - 1].city
+        }</span></li>
+        <li class="user-info-item">Регион: <span class="user-info-item-output">${
+            userDB[id - 1].state
+        }</span></li>
+        <li class="user-info-item">Страна: <span class="user-info-item-output">${
+            userDB[id - 1].country
+        }</span></li>
+        <li class="user-info-item">Номер телефона: <span class="user-info-item-output">${
+            userDB[id - 1].telephone
+        }</span></li>
+        <li class="user-info-item">Дата рождения: <span class="user-info-item-output">${
+            userDB[id - 1].birthday
+        }</span></li>
+    `;
+}
