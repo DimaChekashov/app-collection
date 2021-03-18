@@ -27,7 +27,7 @@ class InputsGroup extends Component {
             [color]: value,
         });
         const { red, green, blue } = newState;
-        this.props.updateColor(`rgb(${red}, ${green}, ${blue}})`);
+        this.props.updateColor(`rgb(${red}, ${green}, ${blue})`);
     }
 
     render() {

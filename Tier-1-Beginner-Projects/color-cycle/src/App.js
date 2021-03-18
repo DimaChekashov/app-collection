@@ -11,16 +11,6 @@ class App extends Component {
             secondColor: "rgb(0, 255, 0)",
             thirdColor: "rgb(0, 0, 255)",
         };
-        this.colorAnim = keyframes`
-          0% { background-color: ${this.state.firstColor}; }
-          33% { background-color: ${this.state.secondColor}; }
-          66% { background-color: ${this.state.thirdColor}; }
-          100% { background-color: ${this.state.firstColor}; }
-          `;
-        this.BackgroundApp = styled.div`
-            background-color: ${this.state.firstColor};
-            animation: ${this.colorAnim} 5s infinite linear; ;
-        `;
         this.updateColor = this.updateColor.bind(this);
     }
 
@@ -31,25 +21,38 @@ class App extends Component {
     }
 
     render() {
-        console.log(this.state);
+        const colorAnim = keyframes`
+            0% { background-color: ${this.state.firstColor}; }
+            33% { background-color: ${this.state.secondColor}; }
+            66% { background-color: ${this.state.thirdColor}; }
+            100% { background-color: ${this.state.firstColor}; }
+          `;
+        const BackgroundApp = styled.div`
+            background-color: ${this.state.firstColor};
+            animation: ${colorAnim} 5s infinite linear; ;
+        `;
+
         return (
-            <this.BackgroundApp className="App">
-                <InputsGroup
-                    updateColor={(value) =>
-                        this.updateColor(value, "firstColor")
-                    }
-                />
-                <InputsGroup
-                    updateColor={(value) =>
-                        this.updateColor(value, "secondColor")
-                    }
-                />
-                <InputsGroup
-                    updateColor={(value) =>
-                        this.updateColor(value, "thirdColor")
-                    }
-                />
-            </this.BackgroundApp>
+            <>
+                <BackgroundApp className="App"></BackgroundApp>
+                <div className="app-wrapper">
+                    <InputsGroup
+                        updateColor={(value) =>
+                            this.updateColor(value, "firstColor")
+                        }
+                    />
+                    <InputsGroup
+                        updateColor={(value) =>
+                            this.updateColor(value, "secondColor")
+                        }
+                    />
+                    <InputsGroup
+                        updateColor={(value) =>
+                            this.updateColor(value, "thirdColor")
+                        }
+                    />
+                </div>
+            </>
         );
     }
 }
